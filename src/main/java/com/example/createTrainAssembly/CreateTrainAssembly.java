@@ -16,7 +16,9 @@ public class CreateTrainAssembly implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("create-train-assembly");
 
-	public static final Registrate REGISTRATE = Registrate.create("create-train-assembly");
+//	public static final Registrate REGISTRATE = Registrate.create("create-train-assembly");
+
+	public static final Block EXAMPLE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(5.0F, 6.0F));
 
 	@Override
 	public void onInitialize() {
@@ -26,8 +28,10 @@ public class CreateTrainAssembly implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 
+		Registry.register(Registry.BLOCK, "create-train-assembly:example_block", EXAMPLE_BLOCK);
+
 		Blocks.register();
 
-		REGISTRATE.register();
+//		REGISTRATE.register();
 	}
 }
